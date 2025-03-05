@@ -1,4 +1,4 @@
-export default function Event() {
+export default function Events() {
     return (
       <main>
         <h1>Test</h1>
