@@ -1,0 +1,20 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--beaver);
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.navbarRightSideContainer, .navbarLeftSideContainer {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    padding: 10px;
+}
