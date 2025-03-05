@@ -1,3 +1,13 @@
 .searchbar {
-    
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--navbar);
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.searchbar {
+    padding-right: 10px;
 }
