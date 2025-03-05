@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 :root {
+    --navbar: #11a0ff;
     --background: #ffffff;
     --foreground: #171717;
     --black: #0a0908ff;
-    --gunmetal: #22333bff;
+    --gunmetal: rgb(188, 20, 20);
     --white-smoke: #f2f4f3ff;
     --beaver: #a9927dff;
     --walnut-brown: #5e503fff;
