@@ -32,29 +32,41 @@ input[type="radio"] {
 
 .payment-method {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  align-items: center; 
+  gap: 10px; 
+  justify-content: space-between; 
+}
+
+.payment-method input[type="radio"] {
+  margin: 0;
+  transform: scale(1.2); 
 }
 
 .payment-method label {
-  margin-left: 10px;
+  margin: 0px; 
+  flex: 1; 
 }
 
-.payment-method div {
+.payment-method .card-icons {
+  display: flex;
+  gap: 10px; 
+  align-items: center; 
   margin-left: auto;
-  font-weight: bold;
 }
 
 button[type="submit"] {
-  width: 100%;
+  width: 100%; 
   padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
   cursor: pointer;
+  font-size: 16px; 
+  font-weight: bold;
 }
 
 button[type="submit"]:hover {
   background-color: #45a049;
 }
+

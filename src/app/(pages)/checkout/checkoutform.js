@@ -67,7 +67,7 @@ const CheckoutPage = () => {
           <label>Bekræft e-mail:</label>
           <input type="email" name="Bekræftemail" value={formData.Bekræftemail} onChange={handleChange} required />
         </div>
-        <button type="submit">Continue to Payment</button>
+        <button type="submit">Fortsæt til betaling</button>
       </form>
     </div>
   );
