@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Layout.js", "src/app/admin/homepage.js"  ],
+, "src/components/Layout.js", "src/app/admin/DashboardAdmin/homepage.js"  ],
   "exclude": [
     "node_modules"
   ]

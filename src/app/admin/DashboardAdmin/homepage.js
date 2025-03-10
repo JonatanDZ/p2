@@ -4,8 +4,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import { useTranslate } from 'react-admin';
 
-import publishArticleImage from './welcome_illustration.svg';
-
+import publishArticleImage from '../welcome_illustration.svg';
+//  Dette skal ændres da det er kopieret !!!!
 const HomePage = () => {
     const translate = useTranslate();
     return (
