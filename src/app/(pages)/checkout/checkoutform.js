@@ -70,6 +70,7 @@ const CheckoutPage = () => {
         <button type="submit">Fortsæt til betaling</button>
       </form>
     </div>
+
   );
 };
 
