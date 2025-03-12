@@ -18,6 +18,17 @@ export async function save_user(Formdata) {
   });
 }
 
+export async function login_check(Formdata) {
+  let result = await db.select().from(UsersTable);
+  for (let i = 0; i < result.length; i++) {
+    if (result[i]["email"] == Formdata.get("email")) {
+      if (result[i]["password"] == Formdata.get("password"))
+        console.log("Database:" + result[i]["email"], Formdata.get("email"));
+      //INSERT STUFF THAT LEADS TO NEXT PAGE HERE!
+    }
+  }
+}
+
 export async function save_shop(Formdata) {
   await db.insert(shopsTable).values({
     name: Formdata.get("shopname"),
