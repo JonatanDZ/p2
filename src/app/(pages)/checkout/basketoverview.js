@@ -1,19 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState } from "react";  
+import { useRouter } from "next/navigation"; 
 
-const BasketOverview = () => {
-  const [quantity, setQuantity] = useState(1); 
-  const [isEmpty, setIsEmpty] = useState(false); 
-  const pricePerItem = 600;
+const BasketOverview = ({ quantity, setQuantity, totalPrice }) => {
+  const [isEmpty, setIsEmpty] = useState(false);
+  const router = useRouter(); 
 
   const handleQuantityChange = (e) => {
-    const newQuantity = parseInt(e.target.value, 10);
+    let newQuantity = parseInt(e.target.value, 10);
+    if (isNaN(newQuantity) || newQuantity < 1) {
+      newQuantity = 1;
+    } else if (newQuantity > 99) {
+      newQuantity = 99;
+    }
     setQuantity(newQuantity);
   };
 
   const handleRemoveItem = () => {
-    setIsEmpty(true); 
+    setIsEmpty(true);
+    setQuantity(1);
+  };
+
+  const handleGoToPayment = () => {
+    router.push(`/paymentselection?totalPrice=${totalPrice}`);
   };
 
   return (
@@ -21,13 +31,13 @@ const BasketOverview = () => {
       <h2>Din Kurv</h2>
 
       {isEmpty ? (
-        <p className="empty-cart">Kurven er tom</p> 
+        <p className="empty-cart">Kurven er tom</p>
       ) : (
         <>
           <div className="item-details">
             <h3>BLS</h3>
             <p>Oversize fit | T-shirt | Sort</p>
-            <strong>DKK {pricePerItem * quantity}</strong>
+            <strong>DKK {totalPrice}</strong> 
           </div>
 
           <div className="selectors">
@@ -59,9 +69,7 @@ const BasketOverview = () => {
         <h3>Din ordre</h3>
         <p>
           Total ({isEmpty ? "0" : quantity} Vare){" "}
-          <span className="total-price">
-            DKK {isEmpty ? "0" : pricePerItem * quantity}
-          </span>
+          <span className="total-price">DKK {totalPrice}</span>
         </p>
       </div>
     </div>

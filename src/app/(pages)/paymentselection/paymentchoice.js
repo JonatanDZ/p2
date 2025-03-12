@@ -1,42 +1,26 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useSearchParams } from "next/navigation"; 
 import "../../../styles/paymentselection.css";
 import Image from "next/image";
-
+import CheckoutButton from "./approveandpay";
 
 const PaymentSelectionPage = () => {
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
+  const searchParams = useSearchParams(); 
+  const totalPrice = parseFloat(searchParams.get("totalPrice")) || 0;
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
 
   const handlePaymentChange = (e) => {
     setSelectedPaymentMethod(e.target.value);
   };
 
-  const handlePaymentSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Selected payment method: ${selectedPaymentMethod}`);
-  
-    fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ paymentMethod: selectedPaymentMethod })
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert('Payment successful!');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-  };
-
   return (
     <div>
       <h1>Betaling</h1>
-      <form onSubmit={handlePaymentSubmit}>
+
+
+      <form>
         <div className="payment-method">
           <input type="radio" id="card" name="paymentMethod" value="Card" onChange={handlePaymentChange} required />
           <label htmlFor="card">Betalingskort</label>
@@ -55,23 +39,24 @@ const PaymentSelectionPage = () => {
           </div>
         </div>
         <div className="payment-method">
-          <input type="radio" id="Apple Pay" name="paymentMethod" value="Apple pay" onChange={handlePaymentChange} required />
-          <label htmlFor="Apple pay">Apple Pay</label>
+          <input type="radio" id="ApplePay" name="paymentMethod" value="ApplePay" onChange={handlePaymentChange} required />
+          <label htmlFor="ApplePay">Apple Pay</label>
           <div className="applepay-icon">
             <Image src="/applepayicon.jpg" alt="Apple Pay" width={60} height={50} />
           </div>
         </div>
         <div className="payment-method">
-          <input type="radio" id="Google Pay" name="paymentMethod" value="Google pay" onChange={handlePaymentChange} required />
-          <label htmlFor="Google Pay">Google Pay</label>
-          <div className="goglepay-icon">
+          <input type="radio" id="GooglePay" name="paymentMethod" value="GooglePay" onChange={handlePaymentChange} required />
+          <label htmlFor="GooglePay">Google Pay</label>
+          <div className="googlepay-icon">
             <Image src="/googlepayicon.jpg" alt="Google Pay" width={50} height={50} />
           </div>
         </div>
-        <button type="submit">Godkend og betal</button>
+        
+        
+        <CheckoutButton paymentMethod={selectedPaymentMethod} totalPrice={totalPrice} />
       </form>
     </div>
-    
   );
 };
 

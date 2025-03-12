@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import "../../../styles/checkout.css";
 
-const CheckoutPage = () => {
+const CheckoutPage = ({ totalPrice }) => { 
   const [formData, setFormData] = useState({
     Fornavn: '',
     Efternavn: '',
@@ -28,7 +28,7 @@ const CheckoutPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push('/paymentselection');
+    router.push(`/paymentselection?totalPrice=${totalPrice}`);
   };
 
   return (
