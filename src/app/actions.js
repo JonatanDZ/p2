@@ -3,10 +3,17 @@
 import { db } from "@/db";
 import { shopsTable, UsersTable } from "@/db/schema";
 
+const bcrypt = require('bcrypt');
+
 export async function save_user(Formdata) {
+  const plainPassword = Formdata.get("password");
+
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+
   await db.insert(UsersTable).values({
     email: Formdata.get("email"),
-    password: Formdata.get("password"), //Hash password
+    password: hashedPassword,
     owner: "no",
   });
 }
