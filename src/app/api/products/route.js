@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+/* import { NextResponse } from 'next/server';
 
 const products = [
   { id: 1, name: 'Laptop', price: '$1200', image: '/img1.jpg' },
@@ -30,3 +30,4 @@ const products = [
 export async function GET() {
   return NextResponse.json(products);
 }
+*/

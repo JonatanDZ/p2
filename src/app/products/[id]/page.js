@@ -1,3 +1,4 @@
+/*
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -36,3 +37,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+*/
