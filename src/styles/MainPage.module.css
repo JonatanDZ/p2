@@ -50,6 +50,13 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     background-color: whitesmoke;
+
+}
+
+.recommendationsImage:hover, .newArrivalImage:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .containerRecommendations, .containerNewArrivals {

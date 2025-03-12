@@ -1,4 +1,10 @@
-import { Admin, Resource, List, Datagrid, TextField, ImageField} from 'react-admin';
+/*
+import Admin from 'react-admin/lib/Admin';
+import Resource from 'react-admin/lib/Resource';
+import List from 'react-admin/lib/List';
+import Datagrid from 'react-admin/lib/Datagrid';
+import TextField from 'react-admin/lib/TextField';
+import ImageField from 'react-admin/lib/ImageField';
 import simpleRestProvider from 'ra-data-simple-rest';
 
 const dataProvider = simpleRestProvider('/api/products');  //api key
@@ -20,3 +26,4 @@ const AdminPage = () => (
 );
 
 export default AdminPage;
+*/

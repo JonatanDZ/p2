@@ -1,6 +1,6 @@
-'use client';
+/* 'use client';
 
-/* import styles from '../styles/ProductSideBar.module.css'; */
+import styles from '../styles/ProductSideBar.module.css'
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -16,12 +16,12 @@ const ProductsPage = () => {
 
     fetchProducts();
   }, []);
-    /* <div className={styles.sidenav}>
+      <div className={styles.sidenav}>
           <a href="#">About</a>
           <a href="#">Services</a>
           <a href="#">Clients</a>
           <a href="#">Contact</a>
-        </div> */
+        </div>
   return (
     <div>
       <h1 style={{ fontSize: '36px' }}>Products</h1>
@@ -45,3 +45,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+*/
