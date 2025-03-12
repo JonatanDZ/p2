@@ -9,7 +9,15 @@ export default function Layout({ children }) {
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
         <Navbar />
-        <form action={save_user}>
+
+        <main style={{ flex: "1" }}>{children}</main>
+
+        <Footer />
+      </body>
+    </html>
+  );
+}
+/*<form action={save_user}>
           <label htmlFor="email_id">Email</label>
           <input id="email_id" type="text" name="email"></input>
           <label htmlFor="password_id">Password</label>
@@ -31,12 +39,4 @@ export default function Layout({ children }) {
           <label htmlFor="user_id">What's your user ID</label>
           <input id="user_id" type="number" name="user_id"></input>
           <button>submit</button>
-        </form>
-
-        <main style={{ flex: "1" }}>{children}</main>
-
-        <Footer />
-      </body>
-    </html>
-  );
-}
+        </form> */

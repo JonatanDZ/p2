@@ -6,8 +6,8 @@ import { shopsTable, UsersTable } from "@/db/schema";
 export async function save_user(Formdata) {
   await db.insert(UsersTable).values({
     email: Formdata.get("email"),
-    password: Formdata.get("password"),
-    owner: Formdata.get("owner"),
+    password: Formdata.get("password"), //Hash password
+    owner: "no",
   });
 }
 
