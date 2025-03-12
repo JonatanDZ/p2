@@ -1,5 +1,7 @@
 import { Datagrid, List, ReferenceField, TextField, EditButton, UrlField } from 'react-admin';
-
+import { db } from "../../../db";
+import { shopsTable, UsersTable } from "../../../db/schema";
+import { exists } from "drizzle-orm";
 
 const SalesList = () => {
     return ( 
