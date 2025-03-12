@@ -7,7 +7,7 @@ const loginComponent = () => {
         <form action="">
             <h1 className='login-name'>Login</h1>
             <div className="input-box">
-              <input type="text" placeholder='Brugernavn/E-mail' required></input>
+              <input type="email" placeholder='Brugernavn/E-mail' required></input>
             </div>
 
             <div className="input-box">

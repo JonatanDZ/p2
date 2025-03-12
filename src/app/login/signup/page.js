@@ -1,8 +1,10 @@
-import Signup from './signuplogic';
+import React from 'react';
+import Signup from './signup';
+import '../page.css';
 
 export default function signup() {
     return (
-      <main>
+      <main className='main-container'>
         <Signup />
       </main>
     );
