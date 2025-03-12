@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@/db";
-import { shopsTable, UsersTable } from "@/db/schema";
+import { db } from "../db";
+import { shopsTable, UsersTable } from "../db/schema";
 
 export async function save_user(Formdata) {
   await db.insert(UsersTable).values({
