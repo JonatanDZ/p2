@@ -27,7 +27,7 @@ const AdminApp = () => (
     <Resource name="users" list={UserList} show={UserShow} edit={UserEdit} create={UserCreate}/>
     <Resource name="items" list={ItemList}/>
     <Resource name="sales" list={ItemList}/>
-
+    
 </Admin>
 );
 
