@@ -15,6 +15,13 @@
       "when": 1741612463728,
       "tag": "0001_pretty_crystal",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1741687511221,
+      "tag": "0002_right_ghost_rider",
+      "breakpoints": true
     }
   ]
 }
