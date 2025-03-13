@@ -19,7 +19,7 @@ const ProductsPage = () => {
   return (
     <div style={{ display: 'flex' }}>
 <ProductSideBar />
-      <div style={{ marginLeft: '220px', display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      <div style={{ marginLeft: '220px', marginTop: '30px', display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {products.map((product) => (
           <Link key={product.id} href={`/products/${product.id}`} passHref>
             <div style={{ border: '1px solid #ccc', padding: '10px', width: '200px', textAlign: 'center' }}>
