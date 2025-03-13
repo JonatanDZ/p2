@@ -6,8 +6,8 @@ const signupComponent = () => {
   return (
     <div className="container">
       <form action={save_user}>
-        <h1 className="login-name">Registrer dig</h1>
-        <div className="input-box">
+        <h1 className={style.loginname}>Registrer dig</h1>
+        <div className={style.input-box}>
           <input
             type="email"
             placeholder="E-mail"
@@ -15,7 +15,7 @@ const signupComponent = () => {
             required
           ></input>
         </div>
-        <div className="input-box">
+        <div className={style.input-box}>
           <input
             type="password"
             placeholder="Password"
@@ -24,7 +24,7 @@ const signupComponent = () => {
           ></input>
         </div>
 
-        <div className="input-box">
+        <div className={style.input-box}>
           <input
             type="password"
             placeholder="Confirm Password"
@@ -32,9 +32,9 @@ const signupComponent = () => {
           ></input>
         </div>
 
-        <button type="submit">Signup</button>
+        <button type={style.submit}>Signup</button>
 
-        <div className="register-link">
+        <div className={style.register-link}>
           <p>
             Allerede bruger? <a href="#">Login her</a>
           </p>

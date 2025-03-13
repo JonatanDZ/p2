@@ -1,22 +1,22 @@
 import React from "react";
-import "./login.css";
+import "../../styles/Login.module.css";
 import { login_check } from "../actions";
 
 const loginComponent = () => {
   return (
-    <div className="container">
+    <div className={style.container}>
       <form action={login_check}>
-        <h1 className="login-name">Login</h1>
-        <div className="input-box">
+        <h1 className={style.loginname}>Login</h1>
+        <div className={style.input-box}>
           <input
             type="email"
-            placeholder="Brugernavn/E-mail"
+            placeholder="E-mail"
             name="email"
             required
           ></input>
         </div>
 
-        <div className="input-box">
+        <div className={style.input-box}>
           <input
             type="password"
             placeholder="Password"
@@ -25,7 +25,7 @@ const loginComponent = () => {
           ></input>
         </div>
 
-        <div className="remember-forgot">
+        <div className={style.remember-forgot}>
           <label>
             <input type="checkbox" />
             Husk mig
@@ -35,7 +35,7 @@ const loginComponent = () => {
 
         <button type="submit">Login</button>
 
-        <div className="register-link">
+        <div className={style.register-link}>
           <p>
             Ny bruger? <a href="#">Registrer dig her</a>
           </p>
