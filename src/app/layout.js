@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
+import "../styles/global.css";
 import { save_shop, save_user } from "./actions.js";
 
 export default function Layout({ children }) {

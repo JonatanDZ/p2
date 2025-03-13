@@ -1,6 +1,6 @@
 import react from "react";
 import "../login.css";
-import { save_user } from "@/app/actions";
+import { save_user } from "../../actions";
 
 const signupComponent = () => {
   return (
