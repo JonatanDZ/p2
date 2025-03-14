@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { loadStripe } from "@stripe/stripe-js";
 
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export default function CheckoutButton({ paymentMethod, totalPrice }) {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
-  const cart = [
-    { name: "BLS Oversize T-shirt", price: totalPrice * 100, quantity: 1 }, // Stripe bruger cents som pris
-  ];
+  const formattedPrice = Math.round((totalPrice || 0) * 100); // Convert DKK to cents/øre
+
+  const cart = [{ name: "BLS Oversize T-shirt", price: formattedPrice, quantity: 1 }];
 
   const handleCheckout = async () => {
     if (!paymentMethod) {
@@ -20,29 +20,44 @@ export default function CheckoutButton({ paymentMethod, totalPrice }) {
 
     setLoading(true);
 
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ cart, paymentMethod }),
-    });
+    try {
+      const response = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart, paymentMethod }),
+      });
 
-    const { sessionId } = await response.json();
-    if (sessionId) {
-      router.push(`https://checkout.stripe.com/pay/${sessionId}`);
-    } else {
-      alert("Betalingsfejl");
+      const data = await response.json();
+
+      console.log("Stripe API Response:", data); 
+
+      if (!response.ok) {
+        throw new Error(data.error || "Noget gik galt!");
+      }
+
+
+      if (data.url) {
+        console.log("Redirecting to Stripe:", data.url);
+        window.location.href = data.url;
+      } else {
+        alert("Fejl: Mangler session URL!");
+      }
+      
+    } catch (error) {
+      console.error("Betalingsfejl:", error);
+      alert(`Fejl: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
-    <button 
+    <button
       type="button"
-      onClick={handleCheckout} 
+      onClick={handleCheckout}
       disabled={loading}
       className="checkout-button"
-      >
+    >
       {loading ? (
         <div className="button-content">
           <svg className="spinner" viewBox="0 0 50 50">
