@@ -27,8 +27,8 @@ export async function POST(req) {
                 quantity: item.quantity,
             })),
             mode: "payment",
-            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/cancel`,
+            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/paymentsuccess?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/paymentfail`,
         });
 
         console.log("Stripe Checkout Session Created:", session);
