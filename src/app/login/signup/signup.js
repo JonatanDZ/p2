@@ -1,13 +1,13 @@
 import react from "react";
-import "../login.css";
+import styles from "../../../styles/Login.module.css";
 import { save_user } from "../../actions";
 
 const signupComponent = () => {
   return (
-    <div className="container">
-      <form action={save_user}>
-        <h1 className={style.loginname}>Registrer dig</h1>
-        <div className={style.input-box}>
+    <div className={styles.container}>
+      <form onSubmit={save_user}>
+        <h1 className={styles.loginname}>Registrer dig</h1>
+        <div className={styles.inputBox}>
           <input
             type="email"
             placeholder="E-mail"
@@ -15,7 +15,7 @@ const signupComponent = () => {
             required
           ></input>
         </div>
-        <div className={style.input-box}>
+        <div className={styles.inputBox}>
           <input
             type="password"
             placeholder="Password"
@@ -24,7 +24,7 @@ const signupComponent = () => {
           ></input>
         </div>
 
-        <div className={style.input-box}>
+        <div className={styles.inputBox}>
           <input
             type="password"
             placeholder="Confirm Password"
@@ -32,9 +32,9 @@ const signupComponent = () => {
           ></input>
         </div>
 
-        <button type={style.submit}>Signup</button>
+        <button type="subimt" className={styles.button}>Signup</button>
 
-        <div className={style.register-link}>
+        <div className={styles.registerLink}>
           <p>
             Allerede bruger? <a href="#">Login her</a>
           </p>
