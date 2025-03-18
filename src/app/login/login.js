@@ -1,11 +1,12 @@
-import React from "react";
+/*import React from "react";
 import "./login.css";
-import { login_check } from "../actions";
+import { login_check } from "../actions";*/
+import Link from "next/link";
 
 const loginComponent = () => {
   return (
     <div className="container">
-      <form action={login_check}>
+      <form /*action={login_check}*/>
         <h1 className="login-name">Login</h1>
         <div className="input-box">
           <input
@@ -37,7 +38,9 @@ const loginComponent = () => {
 
         <div className="register-link">
           <p>
-            Ny bruger? <a href="#">Registrer dig her</a>
+            Ny bruger?
+            <Link href="/">Registrer dig her</Link>
+            
           </p>
         </div>
       </form>

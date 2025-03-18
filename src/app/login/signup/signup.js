@@ -1,11 +1,12 @@
-import react from "react";
+/*import react from "react";
 import "../login.css";
-import { save_user } from "../../actions";
+import { save_user } from "../../actions";*/
+import Link from "next/link";
 
 const signupComponent = () => {
   return (
     <div className="container">
-      <form action={save_user}>
+      <form /*action={save_user}*/>
         <h1 className="login-name">Registrer dig</h1>
         <div className="input-box">
           <input
@@ -36,7 +37,8 @@ const signupComponent = () => {
 
         <div className="register-link">
           <p>
-            Allerede bruger? <a href="#">Login her</a>
+            Allerede bruger?
+            <Link href="/">Login her</Link>
           </p>
         </div>
       </form>
