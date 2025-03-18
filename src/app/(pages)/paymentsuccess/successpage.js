@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import "../../../styles/paymentsuccess.css";
+import Link from "next/link";
 
 export default function SuccessPage() {
   const searchParams = useSearchParams();
@@ -44,7 +45,8 @@ export default function SuccessPage() {
         ) : (
           <p>Kunne ikke finde betalingsoplysninger.</p>
         )}
-        <a href="/" className="home-button">Tilbage til forsiden</a>
+        <Link href="/" className={style.home-button}>Tilbage til forsiden</Link>
+
       </div>
     </div>
   );
