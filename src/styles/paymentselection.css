@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+  justify-content: space-between; 
+}
+
+.payment-method input[type="radio"] {
+  margin: 0;
+  transform: scale(1.2); 
+}
+
+.payment-method label {
+  margin: 0px; 
+  flex: 1; 
+}
+
+.payment-method .card-icons {
+  display: flex;
+  gap: 10px; 
+  align-items: center; 
+  margin-left: auto;
+}
+
+button[type="submit"] {
+  width: 100%; 
+  padding: 10px;
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 16px; 
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.checkout-button {
+  width: 100%; 
+  padding: 12px;
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 18px; 
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
+}
+
+.checkout-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+.path {
+  stroke: white;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -125; }
+}
+
