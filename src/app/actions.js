@@ -1,8 +1,9 @@
 "use server";
 
-import { db } from "../db";
-import { shopsTable, UsersTable } from "../db/schema";
-import { eq } from "drizzle-orm";
+/*import { db } from "../db";
+//import { shopsTable, UsersTable } from "../db/schema";
+//import { eq } from 'drizzle-orm';
+>>>>>>> d094525bcc9b7b0d37e6d958d1c0c1fbcc43508e
 
 const bcrypt = require("bcrypt");
 
@@ -53,3 +54,4 @@ export async function save_shop(Formdata) {
     user_id: Formdata.get("user_id"),
   });
 }
+*/
