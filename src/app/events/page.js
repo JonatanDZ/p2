@@ -22,7 +22,7 @@ const Eventpage = () => {
       <div style={{ marginLeft: '220px', marginTop: '30px', display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {events.map((events) => (
           <Link key={events.id} href={`/events/${events.id}`} passHref>
-            <div style={{ border: '1px solid #ccc', padding: '10px', width: '400px', textAlign: 'center' }}>
+            <div style={{ border: '8px solid #ccc', padding: '10px', width: '400px', textAlign: 'left', background: 'white', borderRadius: '10px' }}>
               <img
                 src={events.image}
                 alt={events.name}
@@ -30,7 +30,7 @@ const Eventpage = () => {
               />
               <h3>{events.name}</h3>
               <p>{events.info}</p>
-              <p>{events.price}</p>
+              <p style= {{fontWeight: 'bold', textAlign: 'center'}}>{events.price}</p>
             </div>
           </Link>
         ))}
