@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/Login.module.css";
 import { login_check } from "../actions";
+import Link from "next/link";
 
 const loginComponent = () => {
   return (
@@ -37,7 +38,7 @@ const loginComponent = () => {
 
         <div className={styles.registerLink}>
           <p>
-            Ny bruger? <a href="#">Registrer dig her</a>
+            Ny bruger? <Link href="/login/signup">Registrer dig her</Link>
           </p>
         </div>
       </form>

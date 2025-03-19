@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "../../../styles/Login.module.css";
+import Link from "next/link";
 
 const SignupComponent = () => {
   const [password, setPassword] = useState("");
@@ -76,7 +77,7 @@ const SignupComponent = () => {
 
         <div className={styles.registerLink} disabled={password != confirmPassword}>
           <p>
-            Allerede bruger? <a href="">Login her</a>
+            Allerede bruger? <Link href="/login">Login her</Link>
           </p>
         </div>
       </form>
